@@ -1,0 +1,267 @@
+List Introduction
+-----------------
+1. List is a collection of elements enclosed by [ ].
+2. List elements can be Homogenious or Heterogenious.
+3. Homogenious means a list with all same type of elements.
+Eg:
+lst = [10,20,30,40]
+4. Heterogenious means a list with different types of elements.
+Eg:
+lst = [10, 1.0, 'a', True]
+5. Each elemengt has its own unique index number.
+6. List supports both forward and backward index numbers.
+7. Forward means Positive Index number which starts with 0.
+8. Backward index Negative index which starts with -1.
+9. List supports both indexing and slicing.
+10. Indexing means fetching specific element by using its index number.
+11. Slicing means fetching set of elements by using its start and end index numbers.
+12. List supports both Concatenation and Repeatation.
+13. List also supports both Packing and Unpacking.
+14. List is Mutable object and dynamic object.
+15. List allows duplicate elements also.
+16. Insertion order of elements is fixed.
+17. List can be created:
+	1. by using [ ].
+	2. by using list()
+	3. by using range()
+	4. by using split()
+ 
+List indexing
+=============
+Indexing means fetching specific element by using its index number.
+
+Syn:
+list[index_number]
+
+Eg:
+lst = [10,20,30,40,50,60,70,80,90]
+lst[0]				10
+lst[5]				60
+lst[8]				90
+lst[-1]				90
+lst[-4]				60
+lst[-9]				10
+lst[-19]			IndexError: list index out of range
+
+List Slicing
+------------
+Slicing means fetching set of elements by using start and end index numbers.
+
+Syn:
+list[start_number : end_number]
+
+Eg:
+lst = [10,20,30,40,50,60,70,80,90]
+lst[2:6]				[30, 40, 50, 60]
+lst[4:8]				[50, 60, 70, 80]
+lst[4:-4]				[50]
+lst[-4:10]				[60, 70, 80, 90]
+lst[:]					[10, 20, 30, 40, 50, 60, 70, 80, 90]
+
+
+List Slicing with double colon
+------------------------------
+Syn:
+list[start_number :: inc_number]
+
+Eg:
+lst = [10,20,30,40,50,60,70,80,90]
+lst[2::3]				[30, 60, 90]
+lst[2::2]				[30, 50, 70, 90]
+lst[4::-2]				[50, 30, 10]
+lst[-4::-2]				[60, 40, 20]
+lst[-1::-2]				[90, 70, 50, 30, 10]
+lst[-1::-1]				[90, 80, 70, 60, 50, 40, 30, 20, 10]
+
+
+List Concatenation
+------------------
+It is the process of using + operator between two list objects.
+Eg:
+lst1 = [1,2,3,4]
+lst2 = ['a',True,1,1.5]
+
+lst = lst1 + lst2
+print(lst)				[1, 2, 3, 4, 'a', True, 1, 1.5]
+
+List Repeatation
+----------------
+ It is the process of using * operator between one list object and one number.
+Eg:
+lst1 = [1,2,3,4]
+n=3
+
+lst = lst1 * n
+print(lst)				[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+
+
+List Packing
+------------
+It is the process of combining all values into single object.
+Eg:
+a = 10
+b = 1.5
+c = True
+d = 'python'
+
+lst = [a,b,c,d]
+
+print(lst)				[10, 1.5, True, 'python']
+
+
+List Unpacking
+--------------
+It is the process of seperating the values from one object into multiple variables.
+Eg:
+lst = [10,'a',True,9.5]
+a,b,c,d = lst
+a				10
+b				'a'
+c				True
+d				9.5
+
+
+List Functions
+--------------
+len():It is used to find the length of list.
+-----
+lst = [10,20,30,'a']
+len(lst)		4
+
+
+count(): It is used to count the number occurances of specific element in the list.
+------
+Eg:
+lst = [10,20,True,1,0,'a',True,False]
+lst.count(1)				3
+lst.count(True)				3
+lst.count(0)				2
+
+index(): It is used to find the index number of specific element.
+-------
+Eg:
+lst = [10,20,True,1,0,'a',True,False]
+lst.index(20)				1
+lst.index('a')				5
+lst.index('x')				ValueError: 'x' is not in list
+
+
+max(): It will return the highest value in list.
+min(): It will return the least value in list.
+sum(): It will return the sum of values in list.
+
+Eg:
+lst = [10,20,30,10,20,30,40,50,60]
+max(lst)				60
+min(lst)				10
+sum(lst)				270
+
+append():
+---------
+It is used to addd only one element at the end of list.
+Eg:
+lst = [10,20,30]
+lst.append(25)
+print(lst)				[10, 20, 30, 25]
+lst.append(100,200)		TypeError: list.append() takes exactly one argument (2 given)
+
+
+extend()
+--------
+It is used to add one or more elemengts at the end of list.
+Eg:
+lst = [10,20,30]
+lst.extend([15])
+print(lst)				[10, 20, 30, 15]
+
+lst.extend([30,40,50])
+print(lst)				[10, 20, 30, 15, 30, 40, 50]
+
+insert()
+- -------
+It is used to add any elemengt at required position in the list.
+Eg:
+lst = [10,20,30,40]
+lst.insert(0,True)    
+lst						[True, 10, 20, 30, 40]
+
+lst.insert(2,'python')
+print(lst)   			[True, 10, 'python', 20, 30, 40]
+
+
+
+
+remove()
+--------
+It is used to delete a specific elemengt from list.
+Eg:
+lst = [10,20,30,40]
+lst.remove(10)
+print(lst)				[20, 30, 40]
+
+lst.remove(40)
+print(lst)				[20, 30]
+
+
+
+pop()
+-----
+It is used to delete a specific elemengt by using its index number.
+If we dont specific any index number in pop() then it will delete the last element by default.
+
+Eg:
+lst = [10,20,30,40]
+lst.pop(0)
+10
+print(lst)				[20, 30, 40]
+
+lst.pop(2)
+40
+print(lst)				[20, 30]
+
+lst.pop()
+30
+print(lst)				[20]
+
+lst.pop()
+20
+print(lst)				[]
+
+
+clear()
+-------
+clear() is used to clear all elements from list.
+Eg:
+lst = [10,20,30,40,40]
+lst.clear()
+print(lst)				[]
+
+Note: List allows both adding elemengts and deleting elements so it is called Mutable Object.
+
+all()
+------
+Zero values  -----> 0,false
+non zero ------> true
+
+lst=[10,20,30,"a"]
+all(lst)
+True
+lst=[0,30,40,"puli"]
+all(lst)
+False
+
+
+any()
+-----
+in lst any non zero it is true otherwise false
+
+lst=[10,20,30,"e"]
+any(lst)
+True
+lst=[0,4,0,5]
+any(lst)
+True
+lst=[0,False,0,0]
+any(lst)
+False
+
